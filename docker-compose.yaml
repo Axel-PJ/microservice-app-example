@@ -65,9 +65,9 @@ services:
       - redis-queue
   
   zipkin:
-    image: openzipkin/zipkin
+    image: openzipkin/zipkin:2
     ports:
       - 9411:9411
 
   redis-queue:
-    image: redis
+    image: redis:6.2.4
