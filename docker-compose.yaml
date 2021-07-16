@@ -83,3 +83,9 @@ services:
       - 3000:3000
     volumes:
       - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+
+  grafana_agent:
+    image: grafana/agent:v0.16.1
+    volumes:
+      - ./grafana_agent/tmp/agent:/etc/agent/data
+      - ./grafana_agent/config.yaml:/etc/agent/agent.yaml

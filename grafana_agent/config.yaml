@@ -1,0 +1,19 @@
+tempo:
+  configs:
+  - name: default
+    receivers:
+      jaeger:
+        protocols:
+          thrift_compact:
+    attributes:
+      actions:
+        - action: upsert
+            key: env
+            value: prod
+    remote_write:
+     - endpoint: tempo-us-central1.grafana.net:443
+       basic_auth:
+         username: 12345
+         # Replace <Grafana API Key> below with an API key that 
+         # has the "Metrics Publisher" role
+         password: <Grafana API Key>
